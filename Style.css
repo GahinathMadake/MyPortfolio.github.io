@@ -144,7 +144,7 @@ header .heading .heading_intro span{
   width: auto;
   height: auto;
 }
-header .heading .heading_intro span a{
+header .heading .heading_intro .a{
   text-decoration: none;
   font-family: sans-serif;
   font-size: 30px;
@@ -152,7 +152,7 @@ header .heading .heading_intro span a{
   color: rgb(214, 203, 203);
 }
 /* Continuous color Change for Name starts */
-header .heading .heading_intro span a:hover{          
+header .heading .heading_intro .a:hover{          
     background: linear-gradient(90deg, #ff0000,#ffff00, #ff00f3, #0033f3, #ff00c4, #ff0000, #ffff00,  #ff00f3, #0033f3, #ff00c4 );             
     font-family: sans-serif ;
     background-size: 300%;             
@@ -336,7 +336,7 @@ header .heading .heading_bar #nav_bar a:hover{
   header .heading .heading_intro .intro_image, header .heading .heading_intro .intro_image font{
     font-size: 20px;
   }
-  header .heading .heading_intro span a{
+  header .heading .heading_intro .a{
     font-size: 20px;
   }
   header .heading .heading_intro{
@@ -379,54 +379,49 @@ header .heading .heading_bar #nav_bar a:hover{
 #my_info .my_intro{
   width: 650px;
   padding: 0 0 0 30px;
+}
+
+/* Typing Animation Starts*/
+.type{
+  width: 100%;
   /* border: 2px solid white; */
 }
-
-#my_info .my_intro .typing_text{
-  width: 100%;
-  margin: 3vw 1vw 1.5vw;
-  font-size: 20px;
-  overflow: hidden
-  ;
+.type .p{
+  width: 80%;
+  margin: 5px auto;
+  text-align: left;
+  font-size: 25px;
+  font-weight: 800;
+}
+.type .p .typed-text{
+  color: rgb(140, 140, 244);
+  font-size: 25px;
+  font-weight: 800;
+}
+.type .p .TypeCursor{
+  width: 3px;
+  border-left: 3px solid rgb(236, 94, 94);
+  height: 100%;
+  position: relative;
+  left: 6px;
+  animation: blink 2s infinite;
+}
+@keyframes blink {
+  0%{
+      border-left: 3px solid red;
+  }
+  50%{
+      border-left: 3px solid red;
+  }
+  55%{
+      border-left: 3px solid red;
+  }
+  100%{
+      border-left: none;
+  }
 }
 
-/* Typing animation text starts */
-.typing_text .text{             
-  position: relative;             
-  color: rgb(107, 107, 238);               
-  /* colour for second text */             
-  font-size: 25px;             
-  font-weight: 600;         
-}          
-.typing_text .first_text{             
-  color: azure;      
-}          
-.second_text:before{             
-  content: '';             
-  position: absolute;             
-  top: 0px;             
-  left: 0px;             
-  height: 100%;             
-  width: 100%;            
-  background-color: #181818;                    /*  Similar to the real background*/             
-  border-left: 2px solid blue;             
-  animation: animate 6s steps(20) infinite;         
-}        
-
-@keyframes animate{              
-  0%,5%{                 
-    left: 0%;              
-  }
-             
-  40%,60%{                 
-    left: calc(100% + 0.5vw);              
-  }    
-
-  98%, 100%{                 
-    left: 0%;              
-  }         
-} 
-/* Typing animation text ends */
+/* Typing Animation Ends*/
 
 #my_info .my_intro .my_name{
   width: 100%;
@@ -454,7 +449,7 @@ header .heading .heading_bar #nav_bar a:hover{
 } 
 /* Continuous color change Ends */
 
-#my_info .my_intro p{
+#my_info .my_intro .pr{
   width: 100%;
   height: auto;
   font-size: 20px;
@@ -532,7 +527,7 @@ header .heading .heading_bar #nav_bar a:hover{
   inset: 1px;
   background: linear-gradient(0deg, yellow,rgb(139, 139, 94),rgb(143, 87, 152), rgb(218, 59, 215));
   border-radius: 200px;
-  /* z-index: 10; */
+  /* z-index: 8; */
 }
 #my_info .my_self .my_photo span:nth-child(1){
   filter: blur(25px);
@@ -545,18 +540,20 @@ header .heading .heading_bar #nav_bar a:hover{
 
 #my_info .my_self .my_photo div{
   position: absolute;
-  inset: 8px;
+  inset: 4px;
   border-radius: 190px;
   overflow: hidden;
+  z-index: 10;
   /* border: 2px solid rgb(255, 0, 0); */
 }
 
 #my_info .my_self .my_photo div img{
-  width: calc(110%);
-  position: relative;
+  width: calc(100%);
+  height:100%;
+  /* position: relative;
   top: -40%;
-  left: -10%;
-  object-fit: cover;
+  left: -10%; */
+  /* object-fit: cover; */
 }
 
 
@@ -641,14 +638,18 @@ header .heading .heading_bar #nav_bar a:hover{
     top: 2px;
   }
 
+  .type .p .typed-text{
+    font-size: 17px;
+  }
 
-  .typing_text .text{
+
+  .type .p{
     font-size: 17px;
   }
   #my_info .my_intro .my_name .continuous_color_change{
     font-size: 30px;
   }
-  #my_info .my_intro p{
+  #my_info .my_intro .pr{
     font-size: 18px;
   }
   #my_info .about_btn button{
@@ -706,7 +707,7 @@ header .heading .heading_bar #nav_bar a:hover{
   border-radius: 50%;
 }
 #about #my_self .my_photo img{
-  width: 260px;
+  width: 100%;
   box-shadow: 0 0 5px white;
   filter: drop-shadow(0 0 1px white);
   object-fit: cover;
