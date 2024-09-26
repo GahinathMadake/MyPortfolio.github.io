@@ -1,0 +1,798 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+/* ------------- Variable of CSS ------------- */
+:root {
+    --bg-color: rgb(255, 255, 255);
+
+
+    --shadow: rgba(179, 170, 170, 0.488);
+    --shadow2: rgba(166, 155, 155, 0.252);
+    --shadow3:  rgba(166, 155, 155, 0.738);
+
+    /* Text Color */
+    --generalColor: rgb(41, 39, 39);
+    --generalWhiteColor: rgb(244, 237, 237);
+    --blueTextColor: rgb(72, 81, 244);
+
+
+    /* Button Color */
+    --buttonColor1: rgb(72, 81, 244);
+    --buttonColor2: #00CCDD;
+    --buttonColor3: #7CF5FF;
+}
+
+
+
+
+/* -------------------- General CSS ------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    font-size: 1rem;
+    /* overflow-x: hidden; */
+    color: var(--generalColor);
+}
+
+
+#wrapper{
+    width: 100%;
+    background: var(--bg-color);
+}
+
+
+
+
+
+
+/* ------------- Common ----------------- */
+
+
+.display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.allSection{
+    width: 100%;
+    padding: 5rem 1rem;
+}
+.allSection .heading h1{
+    width: fit-content;
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    padding: 5px;
+    color: var(--buttonColor1);
+}
+.allSection .heading{
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.allSection .heading h1::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    left: 25%;
+    bottom: 0px;
+    background-color: var(--buttonColor1);   
+}
+
+
+
+
+
+/* ---------------------   Navbar    -------------------------- */
+#Navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1001;
+    box-shadow: 0 0 5px var(--shadow);
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.navbar .name{
+    font-size: 1rem;
+    font-weight: 700;
+    width: 200px;
+    letter-spacing: 0.8px;
+    word-spacing: 1px;
+}
+.navbar .name span{
+    font-size: 1rem;
+    color: var(--blueTextColor);
+}
+
+.navbar .visible ul{
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+    letter-spacing: 0.8px;
+}
+.navbar .visible ul li{
+    position: relative;
+    list-style: none;
+    font-size: 1rem;
+    font-weight: 700;
+    z-index: 1;
+}
+.navbar .visible ul a:hover, .navbar ul a.active{
+    color: var(--blueTextColor);
+}
+.navbar .visible ul a{
+    text-decoration: none;
+}
+
+.menuBar{
+    display: none;
+    z-index: 10000;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(208, 208, 246);
+    cursor: pointer;
+}
+.menuBar i{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+
+
+
+
+/* ------------------- Hidden Navbar ------------------ */
+
+
+.hidden_navbar{
+    display: none;
+    width: 400px;
+    height: 100vh;
+    padding: 90px 0 10px 30px ;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    pointer-events: none;
+    background: linear-gradient(80deg, white, rgb(239, 239, 255),rgb(224, 224, 251));
+}
+.hidden_navbar ul{
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hidden_navbar ul li{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hidden_navbar ul li i{
+    font-size: 1.5rem;
+    color: var(--blueTextColor);
+    font-weight: 700;
+}
+
+.hidden_navbar ul li a{
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+  /* Responsiveness */
+
+
+@media screen and (max-width:1100px) {
+    #Navbar{
+        justify-content: space-between;
+        gap: 0;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #Navbar .visible{
+        display: none;
+    }
+    .menuBar{
+        display: flex;
+    }
+}
+
+@media screen and (max-width:700px) {
+    #Navbar{
+        padding-right: 30px;
+    }
+}
+
+
+
+
+/* Home Starts */
+#Home{
+    margin-top: 60px;
+}
+
+.myImage img{
+    width: 400px;
+}
+
+.my_intro{
+    width: 650px;
+    padding: 10px;
+}
+  
+/* Typing Animation Starts*/
+.type{
+    width: 100%;
+}
+.type .p{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.type .p .typed-text{
+    font-size: 1.5rem;
+    color: var(--blueTextColor);
+}
+
+.type .p .TypeCursor{
+    width: 2px;
+    border-left: 3px solid rgb(236, 94, 94);
+    height: 100%;
+    position: relative;
+    left: 6px;
+    animation: blink 2s infinite;
+}
+  @keyframes blink {
+    0%{
+        border-left: 3px solid red;
+    }
+    50%{
+        border-left: 3px solid red;
+    }
+    55%{
+        border-left: 3px solid red;
+    }
+    100%{
+        border-left: none;
+    }
+  }
+  
+  /* Typing Animation Ends*/
+
+.my_intro h1{
+    font-size: 2rem;
+    font-family: 600;
+}
+
+.my_intro h1 span{
+    font-size: 2rem;
+    color: var(--blueTextColor);
+}
+
+.my_intro .content{
+    padding: 20px 0;
+}
+.my_intro .content p{
+    padding: 10px 0;
+    font-size: 20px;
+}
+
+.my_intro button{
+    padding: 8px 20px;
+    border: none;
+    border-radius: 10px;
+    background: var(--buttonColor3);
+}
+.my_intro button:hover{
+    box-shadow: 1px 1px 1px var(--shadow);
+}
+.my_intro button a{
+    text-decoration: none;
+    color: var(--generalColor);
+}
+
+
+.my_intro .icons{
+    padding: 30px 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 20px;
+}
+.my_intro .icons a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    border: 1px solid var(--generalColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my_intro .icons a:hover{
+    background: var(--buttonColor3);
+}
+.my_intro .icons a i{
+    font-size: 1.5rem;
+}
+.my_intro .icons a img{
+    width: 30px;
+}
+
+
+
+@media screen and (max-width:1100px) {
+}
+
+@media screen and (max-width:700px) {
+    .myImage img{
+        width: 350px;
+    }
+    .my_intro{
+        width: 375px;
+    }
+}
+
+
+
+
+
+
+/* -------------------- About Section ------------------- */
+#About{
+    width: 100%;
+}
+
+#About .aboutme{
+    width: 550px;
+}
+.aboutme h1{
+    font-size: 2rem;
+}
+.aboutme p{
+    padding: 10px 0;
+}
+
+.aboutme .email{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 50px;
+}
+.aboutme .email button{
+    padding: 8px 20px;
+    border: none;
+    background: var(--buttonColor3);
+}
+.aboutme .email button{
+    border-radius: 5px;
+}
+.aboutme .email button:hover{
+    box-shadow: 1px 1px 10px var(--shadow3);
+}
+.email button a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.email button a i{
+    font-size: 1.2rem;
+}
+.email button a i, .email button a span{
+    color: darkblue;
+}
+#About .aboutImage{
+    position: relative;
+    top:0;
+    left: 0;
+}
+
+#About .imageBox{
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 350px;
+    height: 250px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 5px 0 20px var(--shadow2);
+}
+
+/* Styling of cide buttons */
+.aboutTags{
+    position: absolute;
+    padding: 6px 10px;
+    gap: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px var(--shadow2);
+}
+
+.aboutTags img{
+    width: 20px;
+}
+.aboutImage .tag1{
+    top: 40px;
+    left: 5px;
+}
+.aboutImage .tag2{
+    right: 140px;
+    top: 10px;
+}
+.aboutImage .tag3{
+    top: 80px;
+    right: 10px;
+}
+.aboutImage .tag4{
+    bottom: 20px;
+    right: 10px;
+}
+
+.aboutImage .tag5{
+    bottom: 30px;
+    left: 30px;
+}
+.fa-redhat{
+    color: red;
+}
+.fa-cloud{
+    color: rgb(105, 105, 239);
+}
+
+
+.imageBox img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.imageBox div{
+    width: 100%;
+    text-align: center;
+}
+.imageBox div h2{
+    font-size: 1.2rem;
+}
+
+
+@media screen and (max-width:1100px) {
+}
+
+@media screen and (max-width:700px) {
+    .aboutme{
+        width: 375px;
+    }
+    .aboutImage .hideTags{
+        display: none;
+    }
+    #About .imageBox{
+        margin: 0;
+    }
+}
+
+
+
+
+
+/* ------------------- Experience ------------------- */
+.experience{
+    margin: 0 auto;
+    width: 1000px;
+    padding: 20px 0;
+}
+
+.experience .work{
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 20px var(--shadow2);
+    display: flex;
+    justify-content: space-between;
+}
+.work .company{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.work .company h2{
+    font-size: 1.2rem;
+    max-width: 400px;
+}
+
+.work button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blueTextColor);
+    cursor: pointer;
+}
+
+.work button span{
+    font-size: 2rem;
+    color: var(--generalWhiteColor);
+}
+
+
+.CompanyInfo{
+    width: 100%;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+.CompanyInfo img{
+    width: 400px;
+}
+.CompanyInfo ul{
+    width: 500px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.CompanyInfo ul li{
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 20px var(--shadow2);
+    display: flex;
+    gap: 10px;
+}
+.CompanyInfo ul li span{
+    font-size: 1.2rem;
+    color: var(--blueTextColor);
+}
+
+
+
+@media screen and (max-width:1100px) {
+    .experience{
+        width: 600px;
+    }
+    
+
+}
+
+@media screen and (max-width:700px) {
+    .experience, .CompanyInfo ul, .CompanyInfo img{
+        width: 375px;
+    }
+    .work .company{
+        gap: 5px;
+    }
+}
+
+
+
+
+
+/* -------------------  Skills  --------------------- */
+.allskill{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.professional-skills {
+    width: 100%;
+}
+
+.skills-title {
+    font-size: 1.5rem;
+    padding: 20px;
+}
+
+.skills-container{
+    justify-content: space-between;
+    gap: 0;
+}
+
+.skills-list {
+    width: 500px;
+}
+
+.skill-item{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 1px 1px 20px var(--shadow2);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.skill-item i{
+    color: var(--buttonColor1);
+    font-size: 1.5rem;
+}
+.skill-item span{
+    font-weight: bold;
+}
+
+.skills-image{
+    width: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width:1100px) {
+    .allskill{
+        width: 600px;
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    .allskill{
+        width: 375px;
+    }
+    .skills-image{
+        width: 350px;
+    }
+}
+
+
+
+
+/* -----------------  Certification ------------------- */
+
+.certificates{
+    width: 70%;
+    max-width: 800px;
+    min-width: 375px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    gap: 20px;
+}
+.certificate{
+    width: 100%;
+    min-width: 375px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px var(--shadow2);
+    
+    /* Display class added */
+    justify-content: left;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.certificate i{
+    color: rgb(249, 204, 24);
+}
+.certificate a{
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--buttonColor1);
+}
+
+
+
+
+@media screen and (max-width:1100px) {
+}
+
+@media screen and (max-width:700px) {
+    .aboutme{
+        width: 375px;
+    }
+    .aboutImage .hideTags{
+        display: none;
+    }
+}
+
+
+
+
+
+
+/* -------------------- Project  --------------------- */
+
+.project{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.project .expcs{
+    width: 350px;
+    min-height: 500px;
+    margin: 20px 0 20px 0;
+    border-radius: 10px;
+    border-bottom: 5px solid var(--buttonColor1);
+    box-shadow: 1px 1px 20px var(--shadow3);
+}
+
+.project .expcs img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--shadow3);
+}
+
+.project .expcs .exp_cont{
+    width: 100%;
+    padding: 10px 15px;
+}
+.project .expcs .exp_cont .experience_content h1{
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    word-spacing: 1.2px;
+}
+.project .expcs .exp_cont .experience_content p{
+    padding: 10px;
+}
+.prButton{
+    display: flex;
+    justify-content: center;
+}
+
+.project .expcs .exp_cont button{
+    margin: 10px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    background: var(--buttonColor1);
+}
+.project .expcs .exp_cont button a{
+    color: var(--generalWhiteColor);
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* ----------------   Footer    ----------------- */
+.Footer{
+    width: 100%;
+    padding: 30px;
+    background: var(--generalColor);
+}
+
+.Footer *{
+    width: 100%;
+    text-align: center;
+    color: var(--generalWhiteColor);
+}
+
+.footer{
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
