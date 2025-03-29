@@ -105,9 +105,90 @@ let aboutTags = document.querySelectorAll('.aboutImage .aboutTags');
 
 
 
+/* ------------------   Project Display --------------------*/
+
+const projects = [
+
+  // -------  Shareplate  -------
+  {
+    id: 6,
+    title: "SharePlate",
+    description: "SharePlate is a platform designed to reduce food waste by connecting NGOs with surplus food. It sends real-time alerts based on food expiration and travel time, ensuring quick redistribution. The platform also optimizes logistics by displaying real-time routes and calculating distances for efficient coordination between donors and NGOs.",
+    image: "./assets/Projects/Shareplate.png",
+    link: "https://techathon-frontend-tau.vercel.app/"
+  },
+
+   // -------  Digital Portfolio  -------
+   {
+    id: 5,
+    title: "Digital Portfolio",
+    description: "My professional portfolio is designed to showcase my skills, experience, and projects in a simple and organized way. It highlights my work in web development and problem-solving, helping others understand my expertise. It also makes it easy for professionals to connect with me for collaborations and new opportunities.",
+    image: "./assets/Projects/Portfolio.png",
+    link: "/"
+  },
+
+  // -------  CODECHEF TechFest  -------
+  {
+    id: 4,
+    title: "CODECHEF Techfest",
+    description: "I created a website for the CODECHEF Techfest to promote events like CODESPRINT and Pair Programming. It allows participants to register, view event details, and learn about club members. The site also provides support from student coordinators to help participants with any questions during the registration process.",
+    image: "./assets/Projects/CODECHEF2024.png",
+    link: "https://codechefmitaoe.netlify.app/"
+  },
+
+  // ------- JavaScript Projects -------
+  {
+    id: 3,
+    title: "JavaScript Projects",
+    description: "I believe in transforming ideas into visually appealing and functional websites that provide an digital user experience. My Animated Portfolio showcases my skills and projects through interactive design and smooth animations. With a focus on creativity and practicality, my portfolio reflects my passion for modern, user-friendly web development and engaging UI/UX design.",
+    image: "./assets/Projects/JS Projects.png",
+    link: "https://gahinathmadake.github.io/JavaScript-Projects/"
+  },
+
+  // ------- CODECHEF Hiring 2023 -------
+  {
+    id: 2,
+    title: "CODECHEF Hiring 2023",
+    description: "The CODECHEF Hiring Website highlights the benefits of joining the club by showcasing past events, achievements, and contributions. It also provides a detailed list of official members, making it easier for new applicants to understand the club’s structure and impact. This platform helps in recruiting passionate and skilled members efficiently.",
+    image: "./assets/Projects/CodeChef Hiring.png",
+    link: "https://gahinathmadake.github.io/Codechef-Hiring.github.io/"
+  },
+
+  // ------- Personal Portfolio -------
+  {
+    id: 1,
+    title: "Personal Portfolio",
+    description: "I believe in transforming ideas into visually appealing and functional websites that provide an digital user experience. My Animated Portfolio showcases my skills and projects through interactive design and smooth animations. With a focus on creativity and practicality, my portfolio reflects my passion for modern, user-friendly web development and engaging UI/UX design.",
+    image: "./assets/Projects/myPortfolio.png",
+    link: "https://gahinathmadake.github.io/Portfolio.github.io/"
+  }
+];
 
 
+function renderProjects() {
+  const projectsContainer = document.querySelector('.project.display');
+  
+  projectsContainer.innerHTML = projects.map(project => `
+    <div class="expcs">
+      <img width='100%' src="${project.image}" loading="lazy" alt="${project.title}">
+      
+      <div class="exp_cont">
+        <div class="experience_content">
+          <h1>${project.title}</h1>
+          <p>${project.description}</p>
+        </div>
 
+        <div class="prButton">
+          <button>
+            <a href="${project.link}" target="_blank">Check</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', renderProjects);
 
 
 

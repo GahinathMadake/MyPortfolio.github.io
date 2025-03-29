@@ -727,7 +727,7 @@
 
 .project .expcs{
     width: 350px;
-    min-height: 500px;
+    min-height: 620px;
     margin: 20px 0 20px 0;
     border-radius: 10px;
     border-bottom: 5px solid var(--buttonColor1);
@@ -736,7 +736,6 @@
 
 .project .expcs img{
     width: 100%;
-    height: 100%;
     border-radius: 10px;
     box-shadow: 0 0 5px var(--shadow3);
 }
