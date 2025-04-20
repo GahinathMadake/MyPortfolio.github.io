@@ -111,11 +111,20 @@ const projects = [
 
   // -------  Shareplate  -------
   {
-    id: 6,
+    id: 7,
     title: "SharePlate",
     description: "SharePlate is a platform designed to reduce food waste by connecting NGOs with surplus food. It sends real-time alerts based on food expiration and travel time, ensuring quick redistribution. The platform also optimizes logistics by displaying real-time routes and calculating distances for efficient coordination between donors and NGOs.",
     image: "./assets/Projects/Shareplate.png",
-    link: "https://techathon-frontend-tau.vercel.app/"
+    link: "https://techathon-frontend-tau.vercel.app/",
+  },
+
+  // -------  Shadcn UI Practice  -------
+  {
+    id: 6,
+    title: "ShadCN UI Practice",
+    description: "Built a frontend-only project using Shadcn to explore and master its components. Focused on designing clean, responsive UI by effectively using Shadcn assets. This project helped strengthen my understanding of modern UI practices and efficient component-based design.",
+    image: "./assets/Projects/shadCNUI.png",
+    link: "https://gahinathmadakeshadcn.netlify.app/",
   },
 
    // -------  Digital Portfolio  -------
