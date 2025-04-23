@@ -115,7 +115,7 @@ const projects = [
     title: "SharePlate",
     description: "SharePlate is a platform designed to reduce food waste by connecting NGOs with surplus food. It sends real-time alerts based on food expiration and travel time, ensuring quick redistribution. The platform also optimizes logistics by displaying real-time routes and calculating distances for efficient coordination between donors and NGOs.",
     image: "./assets/Projects/Shareplate.png",
-    link: "https://techathon-frontend-tau.vercel.app/",
+    link: "https://shadcn-ui-assignment.netlify.app/",
   },
 
   // -------  Shadcn UI Practice  -------
