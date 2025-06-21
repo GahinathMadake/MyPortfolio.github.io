@@ -503,7 +503,7 @@
 .experience{
     margin: 0 auto;
     width: 1000px;
-    padding: 20px 0;
+    padding: 8px 0;
 }
 
 .experience .work{
@@ -512,6 +512,16 @@
     box-shadow: 1px 1px 20px var(--shadow2);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.experience .work .cmprole{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.experience .work .cmprole h3{
+    font-weight: 500;
+    font-style: italic;
 }
 .work .company{
     display: flex;

@@ -108,6 +108,14 @@ let aboutTags = document.querySelectorAll('.aboutImage .aboutTags');
 /* ------------------   Project Display --------------------*/
 
 const projects = [
+  // -------  AI Tutor  -------
+  {
+    id: 8,
+    title: "Puneri Mehfil",
+    description: "A web platform designed to simplify the planning, promotion, and management of corporate and cultural events. It helps organizers create events, manage registrations, track real-time analytics, and collect user feedback to improve future events. Built using core asp.net MVC architecture for better structure and performance.",
+    image: "./assets/Projects/Event.png",
+    link: "https://github.com/GahinathMadake/Event-Management",
+  },
 
   // -------  Shareplate  -------
   {
@@ -209,17 +217,20 @@ const companyInfo = document.querySelectorAll('#Experience .CompanyInfo');
 
 plusIconWork.forEach((button, index) => {
     button.addEventListener('click', () => {
-        if (companyInfo[index].style.display === 'flex') {
-            companyInfo[index].style.display = 'none';
-            SpanIconWork[index].innerHTML = "+";
-        } 
-        else {
-            companyInfo.forEach(info => info.style.display = 'none');
+        const isVisible = companyInfo[index].style.display === 'flex';
+
+        // Hide all sections
+        companyInfo.forEach(info => info.style.display = 'none');
+        SpanIconWork.forEach(span => span.innerHTML = '+');
+
+        // Toggle clicked section
+        if (!isVisible) {
             companyInfo[index].style.display = 'flex';
-            SpanIconWork[index].innerHTML = "-";
+            SpanIconWork[index].innerHTML = '-';
         }
     });
 });
+
 
 
 
